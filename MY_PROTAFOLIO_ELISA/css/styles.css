@@ -1,0 +1,435 @@
+/*GLOBALES*/
+
+:root {
+    --negro: #0f0a0a;
+    --principal: #42E2B8;
+    --degradado: linear-gradient(135deg, #FAD7A1 0%, #E96D71 100%);
+}
+
+html {
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background: var(--degradado);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 2.8rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+    background-color: var(--negro);
+    color: var(--principal);
+    padding: 1rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    border-bottom: .3rem solid #FFF;
+    border-left: .3rem solid #FFF;
+}
+
+@media (min-width: 768px) {
+    h5 {
+        font-size: 2rem;
+    }
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--negro);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+
+/*UTILIDADES*/
+
+.contenedor {
+    width: 87%;
+    margin: 0 auto;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: " ";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.boton-primario {
+    border-radius: 1rem;
+    border: .15rem solid var(--negro);
+    box-shadow: -.3rem 0 .5rem rgba(0, 0, 0, 0.25);
+    background-color: var(--principal);
+    padding: 1rem;
+}
+
+.boton-secundario {
+    border-radius: 1rem;
+    border: .15rem solid var(--negro);
+    box-shadow: -.3rem 0 .5rem rgba(0, 0, 0, 0.25);
+    background-color: transparent;
+    padding: 1rem;
+}
+
+
+/*ESTILOS PAGINA*/
+
+.site-header {
+    margin-top: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header .logo-header {
+    margin-right: 1rem;
+}
+
+@media (min-width: 768px) {
+    .site-header .logo-header {
+        margin-right: 0;
+    }
+}
+
+.logo-header img {
+    width: 8rem;
+}
+
+@media (max-width:767px) {
+    .nav-header {
+        display: none;
+    }
+}
+
+.enlaces-nav-header {
+    display: inline-block;
+    margin-right: 2rem;
+    opacity: .5;
+    padding: 0 1rem 0 1rem;
+}
+
+.enlaces-nav-header:last-of-type {
+    margin-right: 0;
+}
+
+.enlaces-nav-header:first-of-type {
+    margin-left: 2rem;
+}
+
+@media (max-width: 767px) {
+    .boton-curriculum {}
+}
+
+
+/**============PRESENTACION========================**/
+
+section.presentacion {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    margin-bottom: 8rem;
+}
+
+div.img-presentacion {
+    grid-row: 1 / 2;
+}
+
+div.data-presentacion {
+    grid-row: 2 / 3;
+    padding-bottom: 0;
+}
+
+@media (min-width:768px) {
+    section.presentacion {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: unset;
+        margin-bottom: 0;
+    }
+    div.data-presentacion {
+        grid-column: 1 / 2;
+        grid-row: unset;
+    }
+    div.img-presentacion {
+        grid-column: 2 / 3;
+        grid-row: unset;
+    }
+    nav.navegacion-presentacion {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+div.data-presentacion h3 {
+    margin-top: 4rem;
+}
+
+div.data-presentacion h2 {
+    margin-top: 2rem;
+}
+
+div.data-presentacion p {
+    font-size: 1.5rem;
+}
+
+nav.navegacion-presentacion a {
+    border-radius: unset;
+    box-shadow: unset;
+    margin-right: .5rem;
+    display: inline-block;
+}
+
+nav.navegacion-presentacion a img {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+nav.navegacion-presentacion a:last-of-type {
+    margin-right: 0;
+}
+
+
+/**============IINTRODUCCION PROYECTOS========================**/
+
+div.introduccion-proyectos p {
+    text-align: center;
+}
+
+div.introduccion-proyectos span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+
+div.imagenes-flecha {
+    width: 5rem;
+    height: 5rem;
+    margin: 2rem auto;
+}
+
+
+/**============INFO LEONIDAS========================**/
+
+div.seccion-proyecto {
+    margin: 5rem auto;
+}
+
+div.imagen-seccion-proyecto {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width:768px) {
+    div.seccion-proyecto {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        column-gap: 2rem;
+    }
+    div.data-seccion-proyecto {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    div.imagen-seccion-proyecto {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+}
+
+div.data-seccion-proyecto p {
+    font-weight: 300;
+    margin-bottom: 3rem;
+    text-align: justify;
+}
+
+div.contenedor-enlaces a {
+    display: block;
+    margin: 1rem 0 2rem;
+    text-align: center;
+}
+
+@media (min-width:768px) {
+    .contenedor-enlaces {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row-reverse;
+    }
+    div.contenedor-enlaces a {
+        display: inline-block;
+        flex: 0 0 calc(45% - 1rem);
+    }
+}
+
+div.data-seccion-proyecto a i {
+    margin-right: .5rem;
+}
+
+
+/**============PRIMER TESTIMONIAL========================**/
+
+div.testimonial {
+    background-color: rgba(255, 255, 255, .2);
+    /*backdrop-filter: blur(.5rem);*/
+    border-radius: 1rem;
+    padding: 2rem;
+    border-top: .3rem solid rgba(255, 255, 255, .2);
+    border-left: .3rem solid rgba(255, 255, 255, .2);
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+div.testimonial blockquote {
+    font-weight: 700;
+    line-height: 2;
+    font-size: 1.5rem;
+}
+
+div.testimonial p {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 2;
+    margin-bottom: 0;
+    margin-top: 1rem;
+}
+
+
+/**============MARVOL========================**/
+
+div.imagen-marvol {
+    text-align: center;
+}
+
+
+/**============SECCION HABLEMOS========================**/
+
+section.seccion-hablemos {
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    section.seccion-hablemos {
+        width: 60%;
+    }
+}
+
+form {
+    margin-bottom: 3rem;
+}
+
+form label,
+form input,
+form textarea {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+}
+
+form input,
+form textarea {
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    border-style: solid;
+}
+
+form label {
+    font-weight: 600;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+}
+
+section.seccion-hablemos a {
+    display: block;
+    text-align: center;
+}
+
+
+/**============FOOTER========================**/
+
+.site-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .site-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 1rem;
+    }
+}
+
+footer.site-footer .logo-header {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    footer.site-footer .logo-header {
+        display: block;
+        flex-basis: calc(20% - 1rem);
+        text-align: center;
+    }
+}
+
+footer.site-footer nav {
+    order: 1;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    footer.site-footer .textos-site-footer {
+        flex-basis: calc(55% - 1rem);
+    }
+    footer.site-footer nav {}
+    footer.site-footer nav a {
+        margin: 0 .3rem!important;
+    }
+    footer.site-footer nav a img {
+        width: 1.5rem;
+        width: 1.5rem;
+    }
+}
+
+footer.site-footer nav a {
+    border-radius: 1rem;
+    margin-right: 2rem;
+}
+
+footer.site-footer p {
+    order: 2;
+    text-align: center;
+    font-weight: 300;
+}
